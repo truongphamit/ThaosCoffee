@@ -26,6 +26,7 @@ public class CustommerController {
 	private SpicesService spicesService;
 
 	private OderListService oderListService;
+	@Autowired
 	private CustommerService custommerService = new CustommerServiceImpl();
 
 	@RequestMapping(value = "/custommer/oder", method = RequestMethod.GET)
@@ -41,15 +42,17 @@ public class CustommerController {
 		model.addAttribute("custommer", custommerService.getCustommer());
 		return "oder";
 	}
-	
+
 	@RequestMapping(value = "/custommer/oder/cancel")
 	public String cancel() {
 		return "redirect:/custommer";
 	}
-	
+
 	@RequestMapping(value = "/custommer/oder/pay", method = RequestMethod.GET)
 	public String pay(Model model) {
-		model.addAttribute("custommer", custommerService.getCustommer());
+		Custommer custommer = custommerService.getCustommer();
+		custommerService.add(custommer);
+		model.addAttribute("custommer", custommer);
 		return "pay";
 	}
 }

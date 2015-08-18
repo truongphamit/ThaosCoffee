@@ -10,7 +10,7 @@
 		<h1>ThaosCoffee</h1>
 		<h3>Coffee changes the world!</h3>
 		<a href="/admin">Admin page</a> </br>
-		<a href="/custommer">Custommer page</a> <br/>
+		<a href="/custommer">Custommer page</a> <br/> <br/> <br/>
 		<script type="text/javascript">
 		showWeather('hanoi, vietnam');
 		</script>  <br/>

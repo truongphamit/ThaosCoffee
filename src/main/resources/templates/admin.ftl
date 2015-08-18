@@ -6,7 +6,8 @@
 <body>
 	<div align="center">
 	<h1>ThaosCoffee manager</h1> 
-    <a href="/">Home page</a>
+    <a href="/">Home page</a> <br/>
+    <a href="/admin/historytransaction">History Transaction</a>
 	<h3>Coffee List</h3>
     <table class="coffee">
     <tr>

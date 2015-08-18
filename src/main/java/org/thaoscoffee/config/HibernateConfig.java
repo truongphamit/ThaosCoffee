@@ -30,7 +30,7 @@ public class HibernateConfig {
 		dataSource.setUrl("jdbc:mysql://localhost/thaoscoffeedb");
 		dataSource.setUsername("root");
 		dataSource.setPassword("123456");
-
+		
 		return dataSource;
 	}
 
@@ -42,6 +42,9 @@ public class HibernateConfig {
 				setProperty("hibernate.hbm2ddl.auto", "update");
 				setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 				setProperty("hibernate.globally_quoted_identifiers", "true");
+				setProperty("hibernate.connection.CharSet", "utf8");
+				setProperty("hibernate.connection.characterEncoding", "utf8");
+				setProperty("hibernate.connection.useUnicode", "true");
 			}
 		};
 	}
@@ -52,7 +55,7 @@ public class HibernateConfig {
 		sessionFactory.setDataSource(dataSource());
 		sessionFactory.setPackagesToScan(new String[] { "org.thaoscoffee.model" });
 		sessionFactory.setHibernateProperties(hibernateProperties());
-		
+
 		return sessionFactory;
 	}
 

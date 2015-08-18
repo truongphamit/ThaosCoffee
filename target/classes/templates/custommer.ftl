@@ -9,7 +9,7 @@
 	<h1>ThaosCoffee</h1>
 	<h3>Coffee changes the world!</h3>
 	<a href="/">Home page</a>
-	<h3>Oder</h3>
+	<h3>Order</h3>
 	<form action = "/custommer/oder" >
 		Your name: <input type="text" name="name" /> <br/>
 		Address: <input type="text" name="address" /> <br/>
@@ -51,7 +51,7 @@
         	</tr>
     		</#list>
     	</table>
-    	<input type="submit" value="Oder" />
+    	<input type="submit" value="Order" />
     	<input type="reset">
     </form>
 	

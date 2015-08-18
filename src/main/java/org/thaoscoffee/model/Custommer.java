@@ -1,14 +1,51 @@
 package org.thaoscoffee.model;
 
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "transaction_history")
 public class Custommer {
+	@Id
+	@Column(name = "id_transaction")
 	private int idTransaction;
+	
+	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "address")
 	private String address;
+	
+	@Column(name = "id")
 	private String id;
+	
+	@Column(name = "phone_number")
 	private String phoneNumber;
+	
+	@Column(name = "age")
 	private int age;
+	
+	@Transient
 	private OderList oderList;
+	
+	@Column(name = "money")
 	private double money;
+	
+	@Column(name = "datetime")
+	private Timestamp datetime;
+	
+	public Timestamp getDatetime() {
+		return datetime;
+	}
+
+	public void setDatetime(Timestamp datetime) {
+		this.datetime = datetime;
+	}
 
 	public Custommer() {
 	}

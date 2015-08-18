@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.thaoscoffee.service.CoffeeService;
+import org.thaoscoffee.service.CustommerService;
 import org.thaoscoffee.service.SpicesService;
 
 @Controller
@@ -13,6 +14,8 @@ public class MainController {
 	private CoffeeService coffeeService;
 	@Autowired
 	private SpicesService spicesService;
+	@Autowired
+	private CustommerService custommerService;
 
 	@RequestMapping("/")
 	public String index() {
@@ -25,7 +28,13 @@ public class MainController {
 		model.addAttribute("listSpices", spicesService.findAll());
 		return "admin";
 	}
-	
+
+	@RequestMapping("/admin/historytransaction")
+	public String historyTransaction(Model model) {
+		model.addAttribute("listTransaction", custommerService.findAll());
+		return "historytransaction";
+	}
+
 	@RequestMapping("/custommer")
 	public String custommer(Model model) {
 		model.addAttribute("listCoffees", coffeeService.findAll());

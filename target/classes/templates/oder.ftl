@@ -1,7 +1,7 @@
 <html>
 <body>
 	<div align="center">
-	<h1>Oder's ${custommer.name}</h1>
+	<h1>Order's ${custommer.name}</h1>
 	Your name: ${custommer.name} <br/>
 	Address: ${custommer.address} <br/>
 	Identity Card: ${custommer.id} <br/>

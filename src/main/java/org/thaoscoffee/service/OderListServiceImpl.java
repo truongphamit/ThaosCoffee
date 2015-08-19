@@ -2,12 +2,14 @@ package org.thaoscoffee.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.thaoscoffee.model.Coffee;
 import org.thaoscoffee.model.CoffeeOder;
 import org.thaoscoffee.model.OderList;
 import org.thaoscoffee.model.Spices;
 import org.thaoscoffee.model.SpicesOder;
 
+@Service
 public class OderListServiceImpl implements OderListService {
 	private OderList oderList = new OderList();
 

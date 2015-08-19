@@ -11,7 +11,7 @@
 	<a href="/">Home page</a>
 	<h3>Order</h3>
 	<form action = "/custommer/oder" >
-		Your name: <input type="text" name="name" /> <br/>
+		Your name: <input type="text" name="name" required /> <br/>
 		Address: <input type="text" name="address" /> <br/>
 		Identity Card: <input type="text" name="id" /> <br/>
 		Phone number: <input type="text" name="phoneNumber"/> <br/>

@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.thaoscoffee.model.Custommer;
 import org.thaoscoffee.service.CoffeeService;
 import org.thaoscoffee.service.CustommerService;
-import org.thaoscoffee.service.CustommerServiceImpl;
 import org.thaoscoffee.service.OderListService;
-import org.thaoscoffee.service.OderListServiceImpl;
 import org.thaoscoffee.service.SpicesService;
 
 @Controller
@@ -22,18 +20,20 @@ public class CustommerController {
 
 	@Autowired
 	private CoffeeService coffeeService;
+
 	@Autowired
 	private SpicesService spicesService;
 
-	private OderListService oderListService;
 	@Autowired
-	private CustommerService custommerService = new CustommerServiceImpl();
+	private OderListService oderListService;
+
+	@Autowired
+	private CustommerService custommerService;
 
 	@RequestMapping(value = "/custommer/oder", method = RequestMethod.GET)
 	public String oder(@ModelAttribute("") Custommer custommer,
 			@RequestParam("coffeeQuantity") List<Integer> coffeeQuantitys,
 			@RequestParam("spicesQuantity") List<Integer> spicesQuantitys, Model model) {
-		oderListService = new OderListServiceImpl();
 		custommerService.setCustommer(custommer);
 		oderListService.setCoffeeOders(coffeeService.findAll(), coffeeQuantitys);
 		oderListService.setSpicesOders(spicesService.findAll(), spicesQuantitys);
